@@ -1,0 +1,76 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "adag/hero-slider",
+	"version": "0.1.0",
+	"title": "Hero Slider",
+	"category": "theme",
+	"icon": "superhero",
+	"keywords": [
+		"slide",
+		"carousel",
+		"slider",
+		"slideshow"
+	],
+	"description": "A great slideshow block with hero slides.",
+	"supports": {
+		"align": [
+			"center",
+			"full",
+			"wide",
+			"left",
+			"right"
+		],
+		"html": false
+	},
+	"attributes": {
+		"type": {
+			"type": "string",
+			"enum": [
+				"loop",
+				"fade",
+				"slide"
+			],
+			"default": "slide"
+		},
+		"perPage": {
+			"type": "number",
+			"default": 1
+		},
+		"rewind": {
+			"type": "boolean",
+			"default": true
+		},
+		"speed": {
+			"type": "number",
+			"default": 400
+		},
+		"rewindSpeed": {
+			"type": "number",
+			"default": 400
+		},
+		"perMove": {
+			"type": "number"
+		},
+		"arrows": {
+			"type": "boolean",
+			"default": true
+		},
+		"autoplay": {
+			"type": "boolean",
+			"default": true
+		},
+		"interval": {
+			"type": "number",
+			"default": 5000
+		},
+		"pauseOnHover": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"textdomain": "hero-slider",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

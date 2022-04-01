@@ -1,0 +1,6 @@
+{
+	"phpSniffer.standard": "Wordpress-Core",
+	"intelephense.environment.includePaths": [
+		"../../../"
+	]
+}

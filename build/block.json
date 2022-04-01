@@ -12,7 +12,7 @@
 		"slider",
 		"slideshow"
 	],
-	"description": "A great slideshow block with hero slides.",
+	"description": "A great slideshow block with SplideJs.",
 	"supports": {
 		"align": [
 			"center",

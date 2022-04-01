@@ -6,20 +6,19 @@
 
 .wp-block-adag-hero-slider {
 	border: 2px dotted rgb(255, 8, 214);
-	background-color: #21749b2a;
+	overflow: hidden;
 
 	> .block-editor-inner-blocks {
-		overflow: hidden;
+		box-sizing: border-box;
 		width: 100%;
+		overflow-x: visible;
+		overflow-y: hidden;
 
 		> .block-editor-block-list__layout {
 			display: flex;
 			flex-direction: row;
 			flex-wrap: nowrap;
 			position: static;
-
-			overflow-x: auto;
-			overflow-y: hidden;
 
 			> .wp-block-cover,
 			> .wp-block-group,
@@ -37,6 +36,8 @@
 	> .block-list-appender {
 	top: 0;
 	button {
+		background-color: black;
+		color: white;
 		display: flex;
 		flex-direction: row;
 		height: 50px;

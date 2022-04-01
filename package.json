@@ -1,7 +1,7 @@
 {
 	"name": "adag-hero-slider",
-	"version": "0.1.0",
-	"description": "A great slideshow block with hero slides.",
+	"version": "0.9.9",
+	"description": "A great slideshow block with SplideJs.",
 	"author": "Adson Cicilioti",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
@@ -16,10 +16,11 @@
 	},
 	"devDependencies": {
 		"@types/wordpress__block-editor": "^6.0.6",
-		"@wordpress/scripts": "^22.3.0"
+		"@wordpress/element": "^4.3.0",
+		"@wordpress/scripts": "^22.3.0",
+		"@splidejs/splide": "^3.6.12"
 	},
 	"dependencies": {
-		"@splidejs/splide": "^3.6.12",
 		"@wordpress/block-editor": "^8.4.0",
 		"@wordpress/components": "^19.7.0"
 	}

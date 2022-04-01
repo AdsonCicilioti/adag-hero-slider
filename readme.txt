@@ -2,11 +2,11 @@
 Contributors:      Adson Cicilioti
 Tags:              block
 Tested up to:      5.9
-Stable tag:        0.1.0
+Stable tag:        0.9.9
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-Example static block scaffolded with Create Block tool.
+A great slideshow block with SplideJs.
 
 == Description ==
 

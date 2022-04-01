@@ -26,7 +26,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 function Edit(_ref) {
   let {
     attributes,
@@ -35,7 +34,231 @@ function Edit(_ref) {
   } = _ref;
   const ALLOW_BLOCKS = ["core/cover", "core/media-text", "core/group"];
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps)();
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InnerBlocks, {
+  const slidertypeopts = [{
+    label: "Slide",
+    value: "slide"
+  }, {
+    label: "Fade",
+    value: "fade"
+  }, {
+    label: "Loop",
+    value: "loop"
+  }];
+
+  const setSlideStringOption = (val, prop) => {
+    setAttributes({
+      [prop]: val
+    });
+
+    if (prop === "type" && val === "fade") {
+      setSlideNumberOption(1, "perPage");
+    }
+  };
+
+  const setSlideNumberOption = (num, prop) => {
+    setAttributes({
+      [prop]: num
+    });
+  };
+
+  const setSlideBooleanOption = (bool, prop) => {
+    setAttributes({
+      [prop]: bool
+    });
+  };
+
+  const setSlideBreakpoint = val => {
+    const bkeys = Object.keys(attributes.breakpoints);
+    const {
+      breakpoints: bkpts,
+      ...attrs
+    } = attributes;
+    setAttributes({ ...attrs,
+      breakpoints: {
+        [val]: { ...bkpts[bkeys[0]]
+        }
+      }
+    });
+  };
+
+  const setSliderBrakpointOptions = (val, prop) => {
+    const bkeys = Object.keys(attributes.breakpoints);
+    const {
+      breakpoints: bkpts,
+      ...attrs
+    } = attributes;
+    setAttributes({
+      breakpoints: {
+        [bkeys[0]]: { ...bkpts[bkeys[0]],
+          [prop]: val
+        }
+      }
+    });
+    console.log(attributes.breakpoints);
+  };
+
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InspectorControls, {
+    key: "setting"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Panel, {
+    header: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Hero Slider Settings", "hero-slider"),
+    className: "hero-slider-settings-panel"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("General Setting", "hero-slider")
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("fieldset", {
+    className: "settings-field"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("legend", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slide Effect Type", "hero-slider")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+    value: attributes.type || "",
+    options: slidertypeopts,
+    onChange: val => setSlideStringOption(val, "type")
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("small", {
+    style: {
+      marginBottom: ".875rem",
+      marginTop: "-1.5rem",
+      display: "block"
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('"Fade" type don\'t work with "Slides per page".', "hero-slider"))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("fieldset", {
+    className: "settings-field"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("legend", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slide Transition Speed", "hero-slider")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("small", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("(In miliseconds.)", "hero-slider")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
+    value: attributes.speed,
+    min: 100,
+    max: 1000,
+    step: 50,
+    start: 100,
+    onChange: val => setSlideNumberOption(val, "speed")
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("fieldset", {
+    className: "settings-field"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("legend", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slide Interval Time", "hero-slider")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("small", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("(In seconds.)", "hero-slider")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
+    value: attributes.interval / 1000,
+    min: 2,
+    max: 15,
+    step: 1,
+    start: 2,
+    onChange: val => setSlideNumberOption(val * 1000, "interval")
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("fieldset", {
+    className: "settings-field"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("legend", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Arrows", "hero-slider")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Toggle show arrows", "hero-slider"),
+    checked: attributes.arrows,
+    onChange: val => setSlideBooleanOption(val, "arrows")
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("fieldset", {
+    className: "settings-field"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("legend", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Pagination", "hero-slider")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Toggle show pagination", "hero-slider"),
+    checked: attributes.pagination,
+    onChange: val => setSlideBooleanOption(val, "pagination")
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("fieldset", {
+    className: "settings-field"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("legend", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Pause on hover", "hero-slider")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Pause Slider on mouser hover", "herp-slider"),
+    checked: attributes.pauseOnHover,
+    onChange: val => setSlideBooleanOption(val, "pauseOnHover")
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("fieldset", {
+    className: "settings-field"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("legend", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Autoplay", "hero-slider")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enable Slider autoplay", "hero-slider"),
+    checked: attributes.autoplay,
+    onChange: val => setSlideBooleanOption(val, "autoplay")
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("fieldset", {
+    className: "settings-field"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("legend", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slides per page", "hero-slider")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
+    value: attributes.perPage,
+    min: 1,
+    max: 10,
+    step: 1,
+    start: 1,
+    onChange: val => setSlideNumberOption(val, "perPage")
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("fieldset", {
+    className: "settings-field"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("legend", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slides to Move", "hero-slider")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
+    value: attributes.perMove,
+    min: 1,
+    max: 10,
+    step: 1,
+    start: 1,
+    onChange: val => setSlideNumberOption(val, "perMove")
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("fieldset", {
+    className: "settings-field"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("legend", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Rewind", "hero-slider")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Make Slideshow back from begin", "hero-slider"),
+    checked: attributes.rewind,
+    onChange: val => setSlideBooleanOption(val, "rewind")
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("fieldset", {
+    className: "settings-field"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("legend", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Rewind Speed", "hero-slider")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
+    value: attributes.rewindSpeed,
+    min: 100,
+    max: 2000,
+    step: 50,
+    start: 100,
+    onChange: val => setSlideNumberOption(val, "rewindSpeed")
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("fieldset", {
+    className: "settings-field"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("legend", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Gap", "hero-slider")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalUnitControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Gap between slides", "hero-slider"),
+    value: attributes.gap,
+    onChange: val => setSlideStringOption(val, "gap")
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("fieldset", {
+    className: "settings-field"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("legend", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Padding", "hero-slider")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalUnitControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Padding on sides", "hero-slider"),
+    value: attributes.padding,
+    onChange: val => setSlideStringOption(val, "padding")
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("fieldset", {
+    className: "settings-field"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("legend", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Dragging", "hero-slider")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enable dragging", "hero-slider"),
+    checked: attributes.drag,
+    onChange: val => setSlideStringOption(val, "drag")
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+    title: "Responsive Settings"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("fieldset", {
+    className: "settings-field"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("legend", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Breakpoint", "hero-slider")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalUnitControl, {
+    units: [{
+      value: "px",
+      label: "px",
+      a11yLabel: "Pixels (px)",
+      step: 1
+    }],
+    value: attributes.breakpoints ? Object.keys(attributes.breakpoints)[0] : "",
+    onChange: setSlideBreakpoint
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("fieldset", {
+    className: "settings-field"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("legend", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slides per page (on mobile)", "hero-slider")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
+    value: attributes.breakpoints ? attributes.breakpoints[Object.keys(attributes.breakpoints)[0]].perPage : "",
+    min: 1,
+    max: 10,
+    step: 1,
+    start: 1,
+    onChange: val => setSliderBrakpointOptions(val, "perPage")
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("fieldset", {
+    className: "settings-field"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("legend", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slides to Move (on mobile)", "hero-slider")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
+    value: attributes.breakpoints ? attributes.breakpoints[Object.keys(attributes.breakpoints)[0]].perMove : "",
+    min: 1,
+    max: 10,
+    step: 1,
+    start: 1,
+    onChange: val => setSliderBrakpointOptions(val, "perMove")
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("fieldset", {
+    className: "settings-field"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("legend", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Gap (on mobile)", "hero-slider")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalUnitControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Gap between slides", "hero-slider"),
+    value: attributes.breakpoints ? attributes.breakpoints[Object.keys(attributes.breakpoints)[0]].gap : "",
+    onChange: val => setSliderBrakpointOptions(val, "gap")
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("fieldset", {
+    className: "settings-field"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("legend", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Padding (on mobile)", "hero-slider")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalUnitControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Padding on sides", "hero-slider"),
+    value: attributes.breakpoints ? attributes.breakpoints[Object.keys(attributes.breakpoints)[0]].padding : "",
+    onChange: val => setSliderBrakpointOptions(val, "padding")
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("fieldset", {
+    className: "settings-field"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("legend", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Disable slider behavior", "hero-slider")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Disable slider", "hero-slider"),
+    checked: attributes.breakpoints ? attributes.breakpoints[Object.keys(attributes.breakpoints)[0]].destroy : "",
+    onChange: val => setSliderBrakpointOptions(val, "destroy")
+  }))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InnerBlocks, {
     allowedBlocks: ALLOW_BLOCKS,
     renderAppender: _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InnerBlocks.ButtonBlockAppender
   }));
@@ -113,7 +336,7 @@ function save(_ref) {
   } = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps.save();
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, blockProps, {
     className: `${className || ""} splide`,
-    "data-splide": JSON.stringify(attributes)
+    "data-slider": JSON.stringify(attributes)
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
     class: "splide__track"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {

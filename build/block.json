@@ -34,8 +34,7 @@
 			"default": "slide"
 		},
 		"perPage": {
-			"type": "number",
-			"default": 1
+			"type": "number"
 		},
 		"rewind": {
 			"type": "boolean",
@@ -56,6 +55,10 @@
 			"type": "boolean",
 			"default": true
 		},
+		"pagination": {
+			"type": "boolean",
+			"default": true
+		},
 		"autoplay": {
 			"type": "boolean",
 			"default": true
@@ -67,6 +70,28 @@
 		"pauseOnHover": {
 			"type": "boolean",
 			"default": true
+		},
+		"gap": {
+			"type": "string"
+		},
+		"padding": {
+			"type": "string"
+		},
+		"drag": {
+			"type": "boolean",
+			"default": true
+		},
+		"breakpoints": {
+			"type": "object",
+			"default": {
+				"640": {
+					"perPage": 1,
+					"perMove": 1,
+					"destroy": false,
+					"gap": 0,
+					"padding": 0
+				}
+			}
 		}
 	},
 	"textdomain": "hero-slider",

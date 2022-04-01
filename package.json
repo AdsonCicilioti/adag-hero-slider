@@ -6,7 +6,7 @@
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
-		"build": "wp-scripts build",
+		"build": "node 'scripts/copySliderLib.js' && wp-scripts build",
 		"format": "wp-scripts format",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
@@ -15,15 +15,12 @@
 		"start": "wp-scripts start"
 	},
 	"devDependencies": {
+		"@types/wordpress__block-editor": "^6.0.6",
 		"@wordpress/scripts": "^22.3.0"
 	},
 	"dependencies": {
-		"@splidejs/react-splide": "^0.6.20",
 		"@splidejs/splide": "^3.6.12",
 		"@wordpress/block-editor": "^8.4.0",
-		"@wordpress/components": "^19.7.0",
-		"@wordpress/icons": "^8.1.0",
-		"embla-carousel": "^6.2.0",
-		"embla-carousel-autoplay": "^6.2.0"
+		"@wordpress/components": "^19.7.0"
 	}
 }

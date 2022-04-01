@@ -8,7 +8,6 @@
 	border: 2px dotted rgb(255, 8, 214);
 	background-color: #21749b2a;
 
-	padding-bottom: 5.15rem;
 	> .block-editor-inner-blocks {
 		overflow: hidden;
 		width: 100%;
@@ -36,16 +35,13 @@
 	> .block-editor-inner-blocks
 	> .block-editor-block-list__layout
 	> .block-list-appender {
-	left: 2rem;
-	right: 2rem;
-	bottom: 1rem;
+	top: 0;
 	button {
 		display: flex;
 		flex-direction: row;
 		height: 50px;
 		font-size: 1rem;
 		font-weight: bold;
-		border-radius: 6px;
 		svg {
 			font-size: 1.5rem;
 			width: 1em;
@@ -68,4 +64,21 @@
 .embla__slide {
 	position: relative;
 	flex: 0 0 100%;
+}
+
+.hero-slider-settings-panel {
+	> div.components-panel__header > h2 {
+		font-size: 1.05rem;
+		font-weight: bold;
+		margin-bottom: 0px;
+	}
+	.settings-field {
+		> legend {
+			font-weight: bold;
+			margin: 0.325rem 0;
+		}
+		.components-unit-control {
+			margin-bottom: 0.75rem;
+		}
+	}
 }

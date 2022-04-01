@@ -14,7 +14,9 @@ document.addEventListener(
 				slides[x].classList.add("splide__slide");
 			}
 
-			new Splide(el).mount();
+			const options = JSON.parse(el.getAttribute("data-slider"));
+
+			new Splide(el, options).mount();
 		}
 	},
 	false

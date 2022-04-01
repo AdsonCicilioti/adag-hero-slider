@@ -7,5 +7,77 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
+.wp-block-adag-hero-slider .splide__pagination,
+.wp-block-adag-hero-slider .splide__arrows > .splide__arrow {
+  position: absolute;
+}
+.wp-block-adag-hero-slider .splide__arrows > .splide__arrow,
+.wp-block-adag-hero-slider .splide__pagination .splide__pagination__page {
+  border: none;
+  outline: none;
+  padding: 0;
+  -moz-appearance: unset;
+       appearance: unset;
+  -webkit-appearance: none;
+  display: block;
+}
+.wp-block-adag-hero-slider .splide__pagination {
+  list-style-type: none;
+  padding: 0;
+  bottom: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.25;
+}
+.wp-block-adag-hero-slider .splide__pagination > li {
+  margin: 0 0.3rem;
+}
+.wp-block-adag-hero-slider .splide__pagination .splide__pagination__page {
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 2px #fff, 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  width: 40px;
+  height: 8px;
+  max-width: 8px;
+  opacity: 0.5;
+  transition: all 0.3s ease-in-out;
+}
+.wp-block-adag-hero-slider .splide__pagination .splide__pagination__page.is-active {
+  background-color: transparent;
+  max-width: 40px;
+  height: 8px;
+  opacity: 1;
+}
+.wp-block-adag-hero-slider .splide__arrows .splide__arrow {
+  opacity: 0.25;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  display: flex;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 1rem;
+  cursor: pointer;
+}
+.wp-block-adag-hero-slider .splide__arrows .splide__arrow svg {
+  fill: #fff;
+  width: 20px;
+  height: 20px;
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.75));
+}
+.wp-block-adag-hero-slider .splide__arrows .splide__arrow.splide__arrow--next {
+  right: 1rem;
+}
+.wp-block-adag-hero-slider .splide__arrows .splide__arrow.splide__arrow--prev {
+  left: 1rem;
+  transform: translateY(-50%) rotateZ(180deg);
+}
+.wp-block-adag-hero-slider:hover .splide__arrow,
+.wp-block-adag-hero-slider:hover .splide__pagination {
+  opacity: 1;
+}
 
 /*# sourceMappingURL=style-index.css.map*/

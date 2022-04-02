@@ -1,1 +1,83 @@
-.wp-block-adag-hero-slider .splide__arrows>.splide__arrow,.wp-block-adag-hero-slider .splide__pagination{position:absolute}.wp-block-adag-hero-slider .splide__arrows>.splide__arrow,.wp-block-adag-hero-slider .splide__pagination .splide__pagination__page{-moz-appearance:unset;appearance:unset;-webkit-appearance:none;border:none;display:block;outline:none;padding:0}.wp-block-adag-hero-slider .splide__pagination{align-items:center;bottom:1rem;display:flex;justify-content:center;list-style-type:none;opacity:.25;padding:0;transition:all .3s ease-in-out;width:100%}.wp-block-adag-hero-slider .splide__pagination>li{margin:0 .3rem}.wp-block-adag-hero-slider .splide__pagination .splide__pagination__page{background-color:#fff;border-radius:4px;box-shadow:inset 0 0 0 2px #fff,0 4px 8px rgba(0,0,0,.2);height:8px;max-width:8px;opacity:.5;transition:all .3s ease-in-out;width:40px}.wp-block-adag-hero-slider .splide__pagination .splide__pagination__page.is-active{background-color:transparent;height:8px;max-width:40px;opacity:1}.wp-block-adag-hero-slider .splide__arrows .splide__arrow{background-color:transparent;cursor:pointer;display:flex;opacity:.25;padding:1rem;top:50%;transform:translateY(-50%);transition:all .3s ease;z-index:10}.wp-block-adag-hero-slider .splide__arrows .splide__arrow svg{fill:#fff;filter:drop-shadow(0 0 8px rgba(0,0,0,.75));height:20px;width:20px}.wp-block-adag-hero-slider .splide__arrows .splide__arrow.splide__arrow--next{right:1rem}.wp-block-adag-hero-slider .splide__arrows .splide__arrow.splide__arrow--prev{left:1rem;transform:translateY(-50%) rotate(180deg)}.wp-block-adag-hero-slider:hover .splide__arrow,.wp-block-adag-hero-slider:hover .splide__pagination{opacity:1}
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/style/style.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-adag-hero-slider .splide__pagination,
+.wp-block-adag-hero-slider .splide__arrows > .splide__arrow {
+  position: absolute;
+}
+.wp-block-adag-hero-slider .splide__arrows > .splide__arrow,
+.wp-block-adag-hero-slider .splide__pagination .splide__pagination__page {
+  border: none;
+  outline: none;
+  padding: 0;
+  -moz-appearance: unset;
+       appearance: unset;
+  -webkit-appearance: none;
+  display: block;
+}
+.wp-block-adag-hero-slider .splide__pagination {
+  list-style-type: none;
+  padding: 0;
+  bottom: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.25;
+}
+.wp-block-adag-hero-slider .splide__pagination > li {
+  margin: 0 0.3rem;
+}
+.wp-block-adag-hero-slider .splide__pagination .splide__pagination__page {
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 2px #fff, 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  width: 40px;
+  height: 8px;
+  max-width: 8px;
+  opacity: 0.5;
+  transition: all 0.3s ease-in-out;
+}
+.wp-block-adag-hero-slider .splide__pagination .splide__pagination__page.is-active {
+  background-color: transparent;
+  max-width: 40px;
+  height: 8px;
+  opacity: 1;
+}
+.wp-block-adag-hero-slider .splide__arrows .splide__arrow {
+  opacity: 0.25;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  display: flex;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 1rem;
+  cursor: pointer;
+}
+.wp-block-adag-hero-slider .splide__arrows .splide__arrow svg {
+  fill: #fff;
+  width: 20px;
+  height: 20px;
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.75));
+}
+.wp-block-adag-hero-slider .splide__arrows .splide__arrow.splide__arrow--next {
+  right: 1rem;
+}
+.wp-block-adag-hero-slider .splide__arrows .splide__arrow.splide__arrow--prev {
+  left: 1rem;
+  transform: translateY(-50%) rotateZ(180deg);
+}
+.wp-block-adag-hero-slider:hover .splide__arrow,
+.wp-block-adag-hero-slider:hover .splide__pagination {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

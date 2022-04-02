@@ -1,1 +1,77 @@
-.wp-block-adag-hero-slider{border:2px dotted #ff08d6;overflow:hidden}.wp-block-adag-hero-slider>.block-editor-inner-blocks{box-sizing:border-box;overflow-x:visible;overflow-y:hidden;width:100%}.wp-block-adag-hero-slider>.block-editor-inner-blocks>.block-editor-block-list__layout{display:flex;flex-direction:row;flex-wrap:nowrap;position:static}.wp-block-adag-hero-slider>.block-editor-inner-blocks>.block-editor-block-list__layout>.wp-block-cover,.wp-block-adag-hero-slider>.block-editor-inner-blocks>.block-editor-block-list__layout>.wp-block-group,.wp-block-adag-hero-slider>.block-editor-inner-blocks>.block-editor-block-list__layout>.wp-block-media-text{min-width:100%;position:relative}.wp-block-adag-hero-slider>.block-editor-inner-blocks>.block-editor-block-list__layout>.block-list-appender{top:0}.wp-block-adag-hero-slider>.block-editor-inner-blocks>.block-editor-block-list__layout>.block-list-appender button{background-color:#000;color:#fff;display:flex;flex-direction:row;font-size:1rem;font-weight:700;height:50px}.wp-block-adag-hero-slider>.block-editor-inner-blocks>.block-editor-block-list__layout>.block-list-appender button svg{font-size:1.5rem;height:1em;width:1em}.wp-block-adag-hero-slider>.block-editor-inner-blocks>.block-editor-block-list__layout>.block-list-appender button:before{content:"Adicionar Slide";display:inline-block}.embla{overflow:hidden}.embla__container{display:flex}.embla__container .wp-block-cover,.embla__slide{flex:0 0 100%;position:relative}.hero-slider-settings-panel>div.components-panel__header>h2{font-size:1.05rem;font-weight:700;margin-bottom:0}.hero-slider-settings-panel .settings-field>legend{font-weight:700;margin:.325rem 0}.hero-slider-settings-panel .settings-field .components-unit-control{margin-bottom:.75rem}
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/style/editor.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-adag-hero-slider {
+  border: 2px dotted #ff08d6;
+  overflow: hidden;
+}
+.wp-block-adag-hero-slider > .block-editor-inner-blocks {
+  box-sizing: border-box;
+  width: 100%;
+  overflow-x: visible;
+  overflow-y: hidden;
+}
+.wp-block-adag-hero-slider > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: static;
+}
+.wp-block-adag-hero-slider > .block-editor-inner-blocks > .block-editor-block-list__layout > .wp-block-cover,
+.wp-block-adag-hero-slider > .block-editor-inner-blocks > .block-editor-block-list__layout > .wp-block-group,
+.wp-block-adag-hero-slider > .block-editor-inner-blocks > .block-editor-block-list__layout > .wp-block-media-text {
+  position: relative;
+  min-width: 100%;
+}
+
+.wp-block-adag-hero-slider > .block-editor-inner-blocks > .block-editor-block-list__layout > .block-list-appender {
+  top: 0;
+}
+.wp-block-adag-hero-slider > .block-editor-inner-blocks > .block-editor-block-list__layout > .block-list-appender button {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.wp-block-adag-hero-slider > .block-editor-inner-blocks > .block-editor-block-list__layout > .block-list-appender button svg {
+  font-size: 1.5rem;
+  width: 1em;
+  height: 1em;
+}
+
+.embla {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla__container .wp-block-cover,
+.embla__slide {
+  position: relative;
+  flex: 0 0 100%;
+}
+
+.hero-slider-settings-panel > div.components-panel__header > h2 {
+  font-size: 1.05rem;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.hero-slider-settings-panel .settings-field > legend {
+  font-weight: bold;
+  margin: 0.325rem 0;
+}
+.hero-slider-settings-panel .settings-field .components-unit-control {
+  margin-bottom: 0.75rem;
+}
+
+/*# sourceMappingURL=index.css.map*/

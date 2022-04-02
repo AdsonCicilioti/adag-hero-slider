@@ -14,6 +14,11 @@
 	],
 	"description": "A great slideshow block with SplideJs.",
 	"supports": {
+		"color": {
+			"text": false,
+			"background": true,
+			"gradients": true
+		},
 		"align": [
 			"center",
 			"full",

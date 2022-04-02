@@ -36,6 +36,20 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 				ref={sliderRef}
 				allowedBlocks={ALLOW_BLOCKS}
 				renderAppender={InnerBlocks.ButtonBlockAppender}
+				placeholder={
+					<p
+						style={{
+							display: "inline-block",
+							marginBottom: 0,
+							width: "100%",
+							textAlign: "right",
+							padding: ".8rem",
+							paddingRight: "calc(.8rem + 50px)",
+						}}
+					>
+						{__("Add your first slide block", "hero-slider")}
+					</p>
+				}
 			/>
 		</div>
 	);

@@ -20,7 +20,7 @@ export default function Edit({ attributes, setAttributes, isSelected }) {
 		slideItems.forEach((sld) => {
 			sld.style.minWidth = `calc(100% / ${attributes.perPage || 1})`;
 		});
-		console.log(slideItems);
+
 		const sliderWrap = sliderRef.current.parentNode;
 		sliderWrap.style.padding = `0 ${attributes.padding}`;
 		sliderList.style.gap = `${attributes.gap}`;

@@ -15,7 +15,6 @@
 
 function adag_hero_slider_block_assets() {
 
-	if ( has_block( 'adag/hero-slider' ) || is_admin() ) {
 		wp_enqueue_script(
 			'splide-js',
 			plugins_url( '/vendor/splide.js', __FILE__ ),
@@ -31,7 +30,6 @@ function adag_hero_slider_block_assets() {
 			plugins_url( '/vendor/splide.css', __FILE__ ),
 			array()
 		);
-	}
 }
 add_action( 'enqueue_block_assets', 'adag_hero_slider_block_assets' );
 

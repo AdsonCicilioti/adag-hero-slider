@@ -15,6 +15,13 @@ export const SliderSettingsControl = ({ attributes, setAttributes }) => {
 		{ label: "Fade", value: "fade" },
 		{ label: "Loop", value: "loop" },
 	];
+	const slidereasingopts = [
+		{ label: "Ease", value: "ease" },
+		{ label: "Ease in", value: "ease-in" },
+		{ label: "Ease out", value: "ease-out" },
+		{ label: "Ease in/out", value: "ease-in-out" },
+		{ label: "Linear", value: "linear" },
+	];
 
 	const setSlideStringOption = (val, prop) => {
 		setAttributes({ [prop]: val });
@@ -40,7 +47,6 @@ export const SliderSettingsControl = ({ attributes, setAttributes }) => {
 		setAttributes({
 			breakpoints: { [bkeys[0]]: { ...bkpts[bkeys[0]], [prop]: val } },
 		});
-		console.log(attributes.breakpoints);
 	};
 
 	return (
@@ -71,12 +77,20 @@ export const SliderSettingsControl = ({ attributes, setAttributes }) => {
 						</small>
 					</fieldset>
 					<fieldset className="settings-field">
+						<legend>{__("Transition Effect", "hero-slider")}</legend>
+						<SelectControl
+							value={attributes.easing || ""}
+							options={slidereasingopts}
+							onChange={(val) => setSlideStringOption(val, "easing")}
+						/>
+					</fieldset>
+					<fieldset className="settings-field">
 						<legend>{__("Slide Transition Speed", "hero-slider")}</legend>
 						<small>{__("(In miliseconds.)", "hero-slider")}</small>
 						<RangeControl
 							value={attributes.speed}
 							min={100}
-							max={1000}
+							max={8000}
 							step={50}
 							start={100}
 							onChange={(val) => setSlideNumberOption(val, "speed")}
@@ -87,10 +101,10 @@ export const SliderSettingsControl = ({ attributes, setAttributes }) => {
 						<small>{__("(In seconds.)", "hero-slider")}</small>
 						<RangeControl
 							value={attributes.interval / 1000}
-							min={2}
-							max={15}
+							min={0}
+							max={25}
 							step={1}
-							start={2}
+							start={0}
 							onChange={(val) => setSlideNumberOption(val * 1000, "interval")}
 						/>
 					</fieldset>

@@ -4,7 +4,6 @@ document.addEventListener(
 	"DOMContentLoaded",
 	function () {
 		var spliders = document.querySelectorAll(".splide");
-		console.log(spliders);
 
 		for (let i = 0; i < spliders.length; i++) {
 			const el = spliders[i];

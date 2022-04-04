@@ -38,6 +38,17 @@
 			],
 			"default": "slide"
 		},
+		"easing": {
+			"type": "string",
+			"enum": [
+				"ease",
+				"ease-in",
+				"ease-out",
+				"ease-in-out",
+				"linear"
+			],
+			"default": "ease-in-out"
+		},
 		"perPage": {
 			"type": "number"
 		},

@@ -16,7 +16,7 @@ export default function save({ attributes }) {
 		<div
 			{...blockProps}
 			className={`${className || ""} splide`}
-			data-slider={JSON.stringify(attributes)}
+			data-splide={JSON.stringify(attributes)}
 		>
 			<div class="splide__track">
 				<div class="splide__list">

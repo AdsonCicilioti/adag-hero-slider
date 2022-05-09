@@ -4,7 +4,7 @@
  * Description:       A great slideshow block with SplideJs.
  * Requires at least: 5.8
  * Requires PHP:      7.0
- * Version:           0.9.9
+ * Version:           1.0.0
  * Author:            Adson Cicilioti
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
